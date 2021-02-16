@@ -11,6 +11,12 @@
       "img": "https://www.freecodecamp.org/news/content/images/2019/10/o60oxupyz8cfce0cknvz.png",
       "description": "React is the JS library, but nowdays it is more like a framework. Good job, React!",
       "id": 2
+    },
+    {
+      "title": "HTML",
+      "img": "https://lh3.googleusercontent.com/proxy/HJAF32LRssBsMN6w5n2gbxGpL0dtmar75h1gWeTnaQrTKv6NvyD9jIXu4Jv4whXzy0gsQQZy-KOC3B1D0yybjziw9fo",
+      "description": "HTML is a great tool",
+      "id": 3
     }
   ]
 }

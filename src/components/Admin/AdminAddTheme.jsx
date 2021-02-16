@@ -3,7 +3,6 @@ import React, { useContext, useState } from 'react';
 import classes from './Admin.module.css';
 import { docsContext } from '../../contexts/DocsContext';
 
-import memeImg from '../../assets/images.jpg'
 
 export default function AdminAddTheme() {
 
@@ -14,13 +13,10 @@ export default function AdminAddTheme() {
     const [description, setDescription] = useState('');
 
     const handleAdd = (e) => {
-        // let newTheme = {
-        //     [e.target.name]: e.target.value 
-        // }
         let newTheme = {
-            title: title,
-            img: img,
-            description: description
+            title,
+            img,
+            description
         }
         addNewTheme(newTheme)
         setTitle('');
