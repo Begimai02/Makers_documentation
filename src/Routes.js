@@ -3,8 +3,8 @@ import React from 'react';
 import Home from './containers/Home/Home';
 import DocsContextProvider from './contexts/DocsContext';
 import Header from './containers/Header/Header';
-import UnderHeader from './containers/Home/UnderHeader';
 import DocsDetail from './containers/Docs/DocsDetail';
+import Admin from './components/Admin/Admin';
 
 const Routes = () => {
     return (
@@ -13,8 +13,8 @@ const Routes = () => {
             <Header />
                 <Switch>
                     <Route exact path="/" component={Home} />
-                    <Route exact path="/slider" component={UnderHeader} />
                     <Route exact path="/detail" component={DocsDetail} />
+                    <Route exact path="/admin" component={Admin} />
                 </Switch>
             </BrowserRouter>
         </DocsContextProvider>

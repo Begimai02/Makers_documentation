@@ -4,7 +4,7 @@ import DocsCard from './DocsCard';
 const DocsList = () => {
     return (
         <div>
-            <DocsCard title="Java" />
+            <DocsCard  />
         </div>
     );
 };
