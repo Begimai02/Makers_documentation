@@ -1,4 +1,4 @@
-.admin{
+.adminAddTheme{
     width: 70%;
     height: auto;
     max-width: 900px;
@@ -11,13 +11,36 @@
 }
 
 
-.admin button{
+.adminAddTheme button{
     width: 160px;
     align-self: flex-end;
     background-color: yellow;
     border-radius: 7px;
 }
 
-.admin button:hover{
+.adminAddTheme button:hover{
     background-color: rgb(236, 236, 117);
 }
+
+.addTopicBtn{
+    background-color: yellowgreen !important;
+}
+.addTopicBtn:hover{
+    background-color: rgb(183, 243, 64) !important;
+}
+
+
+.adminPanel{
+    margin: 10px auto;
+    text-align: center;
+}
+
+.adminPanelBtn{
+    margin: 20px !important;
+    background-color: yellowgreen !important;
+}
+
+.btn1{
+    background-color: yellow !important;
+}
+

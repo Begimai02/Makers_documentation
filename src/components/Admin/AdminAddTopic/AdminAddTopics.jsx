@@ -1,35 +1,37 @@
 import { Button, TextField } from '@material-ui/core';
 import React, { useContext, useState } from 'react';
-import classes from './Admin.module.css';
-import { docsContext } from '../../contexts/DocsContext';
+import classes from '../Admin.module.css';
+import { docsContext } from '../../../contexts/DocsContext';
+import AdminThemeChoose from './AdminThemeChoose';
 
 
 export default function AdminAddTopics() {
 
-    // const { addNewTheme } = useContext(docsContext);
+    const { addNewTheme } = useContext(docsContext);
 
-    // const [title, setTitle] = useState('');
-    // const [img, setImg] = useState('');
-    // const [description, setDescription] = useState('');
+    const [title, setTitle] = useState('');
+    const [img, setImg] = useState('');
+    const [description, setDescription] = useState('');
 
-    // const handleAdd = (e) => {
-    //     let newTheme = {
-    //         title,
-    //         img,
-    //         description
-    //     }
-    //     addNewTheme(newTheme)
-    //     setTitle('');
-    //     setImg('');
-    //     setDescription('');
-    // }
+    const handleAdd = (e) => {
+        let newTheme = {
+            title,
+            img,
+            description
+        }
+        addNewTheme(newTheme)
+        setTitle('');
+        setImg('');
+        setDescription('');
+    }
 
     return (
         <div>
-            <div className={classes.admin} >
+            <div className={classes.adminAddTheme} >
                 <h1>
                     Add topics
                 </h1>
+                <AdminThemeChoose />
                 <TextField
                     type="title"
                     name="title"
@@ -64,7 +66,7 @@ export default function AdminAddTopics() {
                     variant="outlined"
                     placeholder="Description"
                 />
-                <Button  variant="contained">
+                <Button  variant="contained" className={classes.addTopicBtn}>
                     Add Topic
                 </Button>
                 {/* onClick={handleAdd} */}

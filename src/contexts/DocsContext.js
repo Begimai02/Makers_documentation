@@ -36,12 +36,22 @@ const DocsContextProvider = ({children}) => {
         getDocs()
     }
 
+    const getThemeId = (id) => {
+        console.log(id)
+    }
+    const addNewTopic = (newTopic) => {
+        axios.post(`http://localhost:8000/docs`, newTopic);
+        
+    }
+
 
     return (
         <docsContext.Provider value={{
             docs: state.docs,
             getDocs,
             addNewTheme,
+            getThemeId,
+            addNewTopic,
         }}>
             {children}
         </docsContext.Provider>

@@ -1,8 +1,9 @@
 import { Button } from '@material-ui/core';
 import React, { useState } from 'react';
 import AdminAddTheme from './AdminAddTheme';
-import AdminAddTopics from './AdminAddTopics';
+import AdminAddTopics from './AdminAddTopic/AdminAddTopics';
 import AdminDocs from './AdminDocs';
+import classes from './Admin.module.css';
 
 const Admin = () => {
     const [theme, setTheme] = useState(false);
@@ -12,14 +13,15 @@ const Admin = () => {
     const topicClick = () => setTopic(!topic)
 
     return (
-        <div>
+        <div className={classes.adminPanel}>
 
-            <Button type="submit" variant="contained" onClick={themeClick}>
+            <Button type="submit" variant="contained" onClick={themeClick} className={classes.adminPanelBtn} className={classes.btn1}>
                 Add theme
             </Button>
-            <Button type="submit" variant="contained" onClick={topicClick}>
+            <Button type="submit" variant="contained" onClick={topicClick} className={classes.adminPanelBtn}>
                 Add topic
             </Button>
+
             <AdminDocs />   {/* for all theme and topics */}
 
             {theme ? <AdminAddTheme /> : null}

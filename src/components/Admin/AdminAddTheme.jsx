@@ -26,7 +26,7 @@ export default function AdminAddTheme() {
 
     return (
         <div>
-            <div className={classes.admin} >
+            <div className={classes.adminAddTheme} >
                 <h1>
                     Add new theme
                 </h1>
