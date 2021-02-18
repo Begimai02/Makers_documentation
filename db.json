@@ -22,10 +22,47 @@
       ]
     },
     {
-      "title": "",
-      "img": "",
-      "description": "",
+      "title": "jQuery",
+      "img": "https://courses.cs.washington.edu/courses/cse154/13sp/lectures/slides/images/jquery.jpg",
+      "description": "jQuery is easy if you know JavaScript",
+      "id": 6
+    }
+  ],
+  "topics": [
+    {
+      "title": "DIV",
+      "img": "dfgd",
+      "description": "The div is the base of the HTML",
+      "themeId": 3,
+      "id": 1
+    },
+    {
+      "title": "useState",
+      "img": "sdfsd",
+      "description": "useState is the coolest thing in the React",
+      "themeId": 2,
+      "id": 2
+    },
+    {
+      "title": "Navbar",
+      "img": "sdfs",
+      "description": "Every website needs its own navbar",
+      "themeId": 3,
+      "id": 3
+    },
+    {
+      "title": "useEffect",
+      "img": "dsfgsd",
+      "description": "useEffect is great",
+      "themeId": 2,
       "id": 4
+    },
+    {
+      "title": "Native JS",
+      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWfjcQBQ_96ogeLzoPig3gAbRhlHvxE1w1VA&usqp=CAU",
+      "description": "Native JS это нукура ЖэЭс",
+      "themeId": 1,
+      "id": 5
     }
   ]
 }

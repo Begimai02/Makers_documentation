@@ -7,23 +7,29 @@ import AdminThemeChoose from './AdminThemeChoose';
 
 export default function AdminAddTopics() {
 
-    const { addNewTheme } = useContext(docsContext);
+    const { addNewTopic, themeId } = useContext(docsContext);
+    // const [idOfTheme, setIdOfTheme] = useContext(themeId);
+
 
     const [title, setTitle] = useState('');
     const [img, setImg] = useState('');
     const [description, setDescription] = useState('');
 
     const handleAdd = (e) => {
-        let newTheme = {
-            title,
-            img,
-            description
+        let newTopic = {
+                title,
+                img,
+                description,
+                themeId: themeId
         }
-        addNewTheme(newTheme)
+        addNewTopic(newTopic);
+
         setTitle('');
         setImg('');
         setDescription('');
     }
+    console.log(themeId)
+
 
     return (
         <div>
@@ -31,12 +37,13 @@ export default function AdminAddTopics() {
                 <h1>
                     Add topics
                 </h1>
-                <AdminThemeChoose />
+                <AdminThemeChoose  />
                 <TextField
-                    type="title"
+                    type="title"    
                     name="title"
-                    // value={title}
-                    // onChange={(e) => setTitle(e.target.value)}
+                    id="standard-title"
+                    value={title}
+                    onChange={(e) => setTitle(e.target.value)}
                     fullWidth={true}
                     style={{ marginBottom: 30 }}
                     variant="outlined"
@@ -45,31 +52,32 @@ export default function AdminAddTopics() {
                 <TextField
                     type="img"
                     name="img"
-                    // value={img}
-                    // onChange={(e) => setImg(e.target.value)}
+                    id="standard-img"
+                    value={img}
+                    onChange={(e) => setImg(e.target.value)}
                     fullWidth={true}
                     style={{ marginBottom: 30 }}
                     variant="outlined"
                     placeholder="Image's url"
                 />
 
-                {/* <img src={memeImg} alt="Theme's screen"/> */}
                 <TextField
                     type="description"
                     name="description"
-                    // value={description}
-                    // onChange={(e) => setDescription(e.target.value)}
+                    id="standard-description"
+                    value={description}
+                    onChange={(e) => setDescription(e.target.value)}
                     multiline
-                    rows={7}
+                    rows={12}
                     fullWidth={true}
                     style={{ marginBottom: 30 }}
                     variant="outlined"
                     placeholder="Description"
                 />
-                <Button  variant="contained" className={classes.addTopicBtn}>
+                <Button onClick={handleAdd} variant="contained" className={classes.addTopicBtn}>
                     Add Topic
                 </Button>
-                {/* onClick={handleAdd} */}
+                
             </div>
         </div>
     )

@@ -34,6 +34,7 @@ export default function AdminAddTheme() {
                     type="title"
                     name="title"
                     value={title}
+                    id="standard-title"
                     onChange={(e) => setTitle(e.target.value)}
                     fullWidth={true}
                     style={{ marginBottom: 30 }}
@@ -43,6 +44,7 @@ export default function AdminAddTheme() {
                 <TextField
                     type="img"
                     name="img"
+                    id="standard-img"
                     value={img}
                     onChange={(e) => setImg(e.target.value)}
                     fullWidth={true}
@@ -55,6 +57,7 @@ export default function AdminAddTheme() {
                 <TextField
                     type="description"
                     name="description"
+                    id="standard-description"
                     value={description}
                     onChange={(e) => setDescription(e.target.value)}
                     multiline
