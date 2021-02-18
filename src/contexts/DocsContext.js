@@ -23,7 +23,7 @@ const DocsContextProvider = ({children}) => {
 
     const getDocs = async () => {
         const { data } = await axios('http://localhost:8000/docs');
-        console.log(data)
+        // console.log(data)
         dispatch({
             type: "GET_DOCS",
             payload: data
@@ -32,7 +32,7 @@ const DocsContextProvider = ({children}) => {
 
     const addNewTheme = (newTheme) =>{
         axios.post('http://localhost:8000/docs', newTheme)
-        console.log(newTheme)
+        // console.log(newTheme)
         getDocs()
     }
 

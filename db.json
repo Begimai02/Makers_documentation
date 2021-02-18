@@ -20,10 +20,22 @@
       "topic": [{}]
     },
     {
-      "title": "",
-      "img": "",
-      "description": "",
-      "id": 4
+      "title": "React",
+      "img": "https://www.freecodecamp.org/news/content/images/2019/10/o60oxupyz8cfce0cknvz.png",
+      "description": "React is the JS library, but nowdays it is more like a framework. Good job, React!",
+      "id": 2
+    },
+    {
+      "title": "React",
+      "img": "https://www.freecodecamp.org/news/content/images/2019/10/o60oxupyz8cfce0cknvz.png",
+      "description": "React is the JS library, but nowdays it is more like a framework. Good job, React!",
+      "id": 2
+    },
+    {
+      "title": "React",
+      "img": "https://www.freecodecamp.org/news/content/images/2019/10/o60oxupyz8cfce0cknvz.png",
+      "description": "React is the JS library, but nowdays it is more like a framework. Good job, React!",
+      "id": 2
     }
   ],
   "topics": [
