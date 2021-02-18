@@ -1,11 +1,12 @@
 import { Container, Typography } from "@material-ui/core";
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Accordion from "@material-ui/core/Accordion";
 import AccordionDetails from "@material-ui/core/AccordionDetails";
 import AccordionSummary from "@material-ui/core/AccordionSummary";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import TopicsDetails from "./TopicsDetails";
+import { docsContext } from "../../../contexts/DocsContext";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -21,11 +22,15 @@ const useStyles = makeStyles((theme) => ({
 
 const AllDocumentation = () => {
   const classes = useStyles();
+  const { docs, topics, getDocs } = useContext(docsContext);
   const [expanded, setExpanded] = React.useState(false);
 
   const handleChange = (panel) => (event, isExpanded) => {
     setExpanded(isExpanded ? panel : false);
   };
+  useEffect(() => {
+    getDocs();
+  }, []);
 
   return (
     <div
@@ -35,8 +40,28 @@ const AllDocumentation = () => {
         justifyContent: "space-between",
       }}
     >
-      <div>
-        <TopicsDetails />
+      <div style={{ display: "flex", flexWrap: "wrap" }}>
+        {/* <TopicsDetails /> */}
+        {docs.map((item) => (
+          <div
+            style={{
+              width: "100%",
+              height: "80vh",
+            }}
+          >
+            <Typography variant="h4" key={item.id + "typo"}>
+              {item.title}
+            </Typography>
+            <div>{item.description}</div>
+            <div>
+              <img
+                style={{ width: "200px", height: "200px" }}
+                src={item.img}
+                alt="smthng"
+              />
+            </div>
+          </div>
+        ))}
       </div>
       <div style={{ width: "400px", height: "auto" }}>
         <Accordion
