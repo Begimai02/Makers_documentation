@@ -5,9 +5,8 @@ import MenuItem from '@material-ui/core/MenuItem';
 import FormHelperText from '@material-ui/core/FormHelperText';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
-import { useContext } from 'react';
 import { docsContext } from '../../../contexts/DocsContext';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useContext } from 'react';
 import { useHistory } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
@@ -15,8 +14,8 @@ const useStyles = makeStyles((theme) => ({
         margin: theme.spacing(1),
         minWidth: 120,
         marginLeft: theme.spacing(0),
-        maxWidth: "900px",
-        width: "100%"
+        // maxWidth: "900px",
+        // width: "100%"
     },
     selectEmpty: {
         marginTop: theme.spacing(2),
@@ -25,13 +24,15 @@ const useStyles = makeStyles((theme) => ({
 
 export default function AdminThemeChoose() {
 
-    const { docs, getDocs, getThemeId } = useContext(docsContext);
+    const { docs, getDocs, getThemeId, pushThemeId } = useContext(docsContext);
     const [titles, setTitles] = useState(docs);
     console.log(docs)
-    console.log(titles)
+    // console.log(titles)
 
     useEffect(() => {
         getDocs()
+        setTitles(docs)
+    // console.log(titles)
     }, [])
 
     let history = useHistory()
@@ -50,7 +51,7 @@ export default function AdminThemeChoose() {
         <div>
             {titles ?
                 <>
-                    <FormControl variant="outlined" className={classes.formControl} style={{ marginBottom: 30 }}>
+                    <FormControl variant="outlined" fullWidth={true} className={classes.formControl} style={{ marginBottom: 30 }}>
                         <InputLabel id="demo-simple-select-outlined-label" placeholder="Theme">Theme</InputLabel>
                         <Select
                             labelId="demo-simple-select-outlined-label"
@@ -59,10 +60,9 @@ export default function AdminThemeChoose() {
                             onChange={handleChange}
                             placeholder="Theme"
                         >
-                            {docs.map(item => (
-                                <MenuItem value={item.title} onClick={handleChange === item.title ? getThemeId(item.id) : null}>{item.title}</MenuItem>
+                            {docs.map((item, index) => (
+                                <MenuItem key={index + "SelectTheme"} value={item.title} onClick={() => pushThemeId(item.id)}>{item.title}</MenuItem>
                             ))} 
-                            {/* НУЖНО ЧТОБЫ СЕЛЕКТ ДОСТАВАЛ ID ВЫБРАННОГО THEME */}
                         </Select>
                     </FormControl>
                 </>
@@ -71,3 +71,6 @@ export default function AdminThemeChoose() {
         </div>
     );
 }
+
+
+// handleChange === item.title ? getThemeId(item.id) : null
