@@ -1,10 +1,11 @@
 import React from 'react';
-import DocsCard from './DocsCard';
+import DocsCard1 from './DocsCard1';
+
 
 const DocsList = () => {
     return (
         <div>
-            <DocsCard  />
+            <DocsCard1/>
         </div>
     );
 };
