@@ -6,10 +6,9 @@ const TopicsDetails = () => {
   const { docs, getDocs, getTopics, topics } = useContext(docsContext);
   useEffect(() => {
     getDocs();
-  }, []);
-  useEffect(() => {
     getTopics();
   }, []);
+
   // console.log(docs);
   return (
     <>

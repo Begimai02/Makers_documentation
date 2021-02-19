@@ -5,12 +5,18 @@ import AdminAddTopics from './AdminAddTopic/AdminAddTopics';
 import AdminDocs from './AdminDocs';
 import classes from './Admin.module.css';
 
+import Test1 from '../../containers/Docs/AllDocumentation/Test1';
+
 const Admin = () => {
     const [theme, setTheme] = useState(false);
     const [topic, setTopic] = useState(false);
 
     const themeClick = () => setTheme(!theme)
     const topicClick = () => setTopic(!topic)
+
+    function handleSave(){
+        setTopic(!topic)
+    }
 
     return (
         <div className={classes.adminPanel}>
@@ -25,7 +31,9 @@ const Admin = () => {
             <AdminDocs />   {/* for all theme and topics */}
 
             {theme ? <AdminAddTheme /> : null}
-            {topic ? <AdminAddTopics /> : null}
+            {topic ? <AdminAddTopics handleSave={handleSave} /> : null}
+
+            <Test1 />
             
         </div>
     );

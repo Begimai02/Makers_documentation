@@ -15,6 +15,7 @@ export default function AdminAddTheme() {
       title,
       img,
       description,
+      topics: []
     };
     if (!title || !img || !description) {
       alert("заполните все поля!");

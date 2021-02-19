@@ -24,28 +24,33 @@ const useStyles = makeStyles((theme) => ({
 
 export default function AdminThemeChoose() {
 
-    const { docs, getDocs, getThemeId, pushThemeId } = useContext(docsContext);
+    const { docs, getDocs, getoneObjTheme, pushTheme, addNewTopic } = useContext(docsContext);
     const [titles, setTitles] = useState(docs);
-    console.log(docs)
-    // console.log(titles)
+    // console.log(docs)
 
     useEffect(() => {
         getDocs()
         setTitles(docs)
-    // console.log(titles)
+        // console.log(titles)
     }, [])
 
     let history = useHistory()
 
-// not mine = material ui under
+    // not mine = material ui under
     const classes = useStyles();
     // const [age, setAge] = React.useState('');
 
     const handleChange = (e) => {
         // setAge(e.target.value);
         console.log(e.target.value)
+
         return e.target.value
     };
+
+    function gettingThemeId(id) {
+        addNewTopic(id);
+        pushTheme(id);
+    }
 
     return (
         <div>
@@ -56,13 +61,24 @@ export default function AdminThemeChoose() {
                         <Select
                             labelId="demo-simple-select-outlined-label"
                             id="demo-simple-select-outlined"
+                            // id="demo-customized-select-outlined"
                             // value={age}
                             onChange={handleChange}
                             placeholder="Theme"
+                            defaultValue=""
                         >
+                            {/* <MenuItem value="">
+                                <em>None</em>
+                            </MenuItem> */}
                             {docs.map((item, index) => (
-                                <MenuItem key={index + "SelectTheme"} value={item.title} onClick={() => pushThemeId(item.id)}>{item.title}</MenuItem>
-                            ))} 
+                                <MenuItem
+                                    key={index + "SelectTheme"}
+                                    value={item.title}
+                                    onClick={() => gettingThemeId(item.id)}
+                                >
+                                    {item.title}
+                                </MenuItem>
+                            ))}
                         </Select>
                     </FormControl>
                 </>
@@ -73,4 +89,6 @@ export default function AdminThemeChoose() {
 }
 
 
-// handleChange === item.title ? getThemeId(item.id) : null
+// handleChange === item.title ? getoneObjTheme(item.id) : null
+
+// onClick={() => pushTheme(item.id)

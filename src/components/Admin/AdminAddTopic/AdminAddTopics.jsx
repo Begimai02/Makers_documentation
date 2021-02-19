@@ -3,33 +3,34 @@ import React, { useContext, useState } from "react";
 import classes from "../Admin.module.css";
 import { docsContext } from "../../../contexts/DocsContext";
 import AdminThemeChoose from "./AdminThemeChoose";
+import { useHistory } from "react-router-dom";
 
-export default function AdminAddTopics() {
-  const { addNewTopic, themeId } = useContext(docsContext);
-  // const [idOfTheme, setIdOfTheme] = useContext(themeId);
+export default function AdminAddTopics(props) {
+  const { addNewTopic, oneObjTheme, pushTheme, pushTopic } = useContext(docsContext);
+  // const [idOfTheme, setIdOfTheme] = useContext(oneObjTheme);
 
   const [title, setTitle] = useState("");
   const [img, setImg] = useState("");
   const [description, setDescription] = useState("");
-
+  const history = useHistory()
   const handleAdd = (e) => {
     let newTopic = {
       title,
       img,
       description,
-      themeId: themeId,
     };
     if (!title || !img || !description) {
       alert("заполните все поля!");
       return;
     }
-    addNewTopic(newTopic);
-
+    // addNewTopic(newTopic);
+    pushTopic(newTopic);
     setTitle("");
     setImg("");
     setDescription("");
+    props.handleSave()
   };
-  console.log(themeId);
+  // console.log(oneObjTheme);
 
   return (
     <div>
