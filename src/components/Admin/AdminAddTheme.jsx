@@ -1,10 +1,10 @@
 import { Button, TextField } from "@material-ui/core";
 import React, { useContext, useState } from "react";
+import { docsContextNew } from "../../contexts/DocsContextNew";
 import classes from "./Admin.module.css";
-import { docsContext } from "../../contexts/DocsContext";
 
 export default function AdminAddTheme() {
-  const { addNewTheme } = useContext(docsContext);
+  const { addTheme } = useContext(docsContextNew);
 
   const [title, setTitle] = useState("");
   const [img, setImg] = useState("");
@@ -21,7 +21,8 @@ export default function AdminAddTheme() {
       alert("заполните все поля!");
       return;
     }
-    addNewTheme(newTheme);
+    addTheme(newTheme);
+
     setTitle("");
     setImg("");
     setDescription("");
@@ -54,7 +55,6 @@ export default function AdminAddTheme() {
           placeholder="Image's url"
         />
 
-        {/* <img src={memeImg} alt="Theme's screen"/> */}
         <TextField
           type="description"
           name="description"

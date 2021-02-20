@@ -1,13 +1,11 @@
 import React from 'react';
-import Content from './Content';
 import './Home.module.css';
-import Test from './Test';
+import DocsCard1 from '../Docs/DocsCard1';
 
 const Home = () => {
     return (
         <div>
-            <Content />
-            <Test /> 
+            <DocsCard1 />
         </div>
     );
 };

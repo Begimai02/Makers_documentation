@@ -1,0 +1,15 @@
+.container{
+  max-width: 700px;
+  margin: 20px;
+}
+
+.detailImg{
+  max-width: 400px;
+  height: auto;
+  margin: 10px;
+}
+
+.detailImg img{
+  width: 100%;
+  height: auto;
+}

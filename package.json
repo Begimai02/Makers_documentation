@@ -14,6 +14,7 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.2",
     "react-slick": "^0.28.0",
+    "react-truncate": "^2.4.0",
     "slick-carousel": "^1.8.1",
     "typeface-poppins": "^1.1.13",
     "web-vitals": "^1.1.0"
